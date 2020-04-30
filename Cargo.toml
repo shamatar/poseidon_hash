@@ -1,0 +1,24 @@
+[package]
+authors = ["Alex Vlasov <alex.m.vlasov@gmail.com>"]
+description = "Poseidon hash implementation"
+homepage = "https://github.com/shamatar/poseidon_hash"
+license = "MIT/Apache-2.0"
+name = "poseidon_hash"
+version = "0.0.1"
+edition = "2018"
+
+[features]
+ 
+[dependencies]
+rand = "0.4"
+byteorder = "1"
+tiny-keccak = "1.4.2"
+sha2 = "0.8.*"
+num-bigint = "0.2"
+num-integer = "0.1"
+num-traits = "0.2"
+pairing = {package = "pairing_ce", version = "0.21.*" }
+blake2-rfc_bellman_edition = "0.0.1"
+alga = "*"
+approx = "0.3.2"
+mathru = "*"
