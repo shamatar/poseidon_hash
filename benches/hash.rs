@@ -42,8 +42,27 @@ fn bench_rate_specialized_2(b: &mut test::Bencher) {
 fn bench_rate_2_80_bits(b: &mut test::Bencher) {
     let rate = 2u32;
     let capacity = 1u32;
+    // total number of round is 39 as per https://toolkit.abdk.consulting/poseidon#parameters-calculator
     let num_full = 8u32;
-    let num_partial = 52u32;
+    let num_partial = 31u32;
+    let security_level = 80u32;
+    let params = Bn256PoseidonParams::new_for_params::<BlakeHasher>(capacity, rate, num_partial, num_full, security_level);
+    let rng = &mut thread_rng();
+    let input = (0..rate).map(|_| Fr::rand(rng)).collect::<Vec<_>>();
+
+    b.iter(|| {
+        poseidon_hash::<Bn256>(&params, &input)
+    });
+}
+
+
+#[bench]
+fn bench_rate_2_128_bits(b: &mut test::Bencher) {
+    let rate = 2u32;
+    let capacity = 1u32;
+    // total number of round is 61 as per https://toolkit.abdk.consulting/poseidon#parameters-calculator
+    let num_full = 8u32;
+    let num_partial = 53u32;
     let security_level = 80u32;
     let params = Bn256PoseidonParams::new_for_params::<BlakeHasher>(capacity, rate, num_partial, num_full, security_level);
     let rng = &mut thread_rng();
