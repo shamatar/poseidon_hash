@@ -106,8 +106,8 @@ impl Bn256PoseidonParams {
                 let h = h.finalize();
                 assert!(h.len() == 32);
                 let mut seed = [0u32; 8];
-                for i in 0..8 {
-                    seed[i] = (&h[..]).read_u32::<BigEndian>().expect("digest is large enough for this to work");
+                for (i, chunk) in h.chunks_exact(4).enumerate() {
+                    seed[i] = (&chunk[..]).read_u32::<BigEndian>().expect("digest is large enough for this to work");
                 }
 
                 ChaChaRng::from_seed(&seed)

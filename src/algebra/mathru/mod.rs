@@ -123,9 +123,9 @@ impl<F: PrimeField> Sign for Element<F> {
 }
 
 impl<F: PrimeField> Scalar for Element<F> {
-    fn epsilon() -> Self { 
-        Self::zero()
-    }
+    // fn epsilon() -> Self { 
+    //     Self::zero()
+    // }
 }
 
 // impl<F: PrimeField> Power for Element<F> {
@@ -173,7 +173,7 @@ mod test {
 
         let inv = matrix.inv();
 
-        assert!(inv.is_some());
+        assert!(inv.is_ok());
 
         let inv = inv.unwrap();
         let may_be_identity = matrix.clone() * inv;
@@ -188,6 +188,6 @@ mod test {
 
         let inv = matrix.inv();
 
-        assert!(inv.is_some());
+        assert!(inv.is_ok());
     }
 }
