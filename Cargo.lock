@@ -114,9 +114,9 @@ checksum = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
 
 [[package]]
 name = "ff_ce"
-version = "0.11.0"
+version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d3a682c12d0cc98a32ab7540401a5ea1ed21d11571eea11d5829cd721f85ff0"
+checksum = "38107cbd8bac0d907d7e7513c9f68c95adbda9e6f6f6bdf3f5111c6ecac4fe47"
 dependencies = [
  "byteorder",
  "ff_derive_ce",
@@ -126,9 +126,9 @@ dependencies = [
 
 [[package]]
 name = "ff_derive_ce"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50c052fa6d4c2f12305ec364bfb8ef884836f3f61ea015b202372ff996d1ac4b"
+checksum = "77d4fecbd8714dc12f4bab026d74e3f5766436bf4d9fc1161709d6e45a593400"
 dependencies = [
  "num-bigint",
  "num-integer",
@@ -247,11 +247,12 @@ checksum = "2839e79665f131bdb5782e51f2c6c9599c133c6098982a54c794358bf432529c"
 
 [[package]]
 name = "pairing_ce"
-version = "0.22.0"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "337865171b276a7cf6fef3ce5326a1ecc97e59f969949c87a962d0d8e24cbdcc"
+checksum = "56fe936aaff9513078676e9ae683371d81c61bb0a20507f9dd1fedf6157a9763"
 dependencies = [
  "byteorder",
+ "cfg-if",
  "ff_ce",
  "rand 0.4.6",
 ]

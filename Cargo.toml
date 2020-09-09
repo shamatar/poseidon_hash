@@ -17,8 +17,8 @@ sha2 = "0.8.*"
 num-bigint = "0.2"
 num-integer = "0.1"
 num-traits = "0.2"
-pairing = {package = "pairing_ce", version = "0.22.*" }
+pairing = {package = "pairing_ce", version = "0.24.*" }
 blake2-rfc_bellman_edition = "0.0.1"
-alga = "*"
+alga = "0.9.3"
 approx = "0.3.2"
-mathru = "*"
+mathru = "0.6.10"
